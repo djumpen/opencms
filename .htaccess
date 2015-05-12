@@ -1,7 +1,6 @@
 # Un comment it to restrict access from not listed in ip addresses
 #order deny,allow
 #deny from all
-#allow from 81.17.135.214 81.17.135.142 109.86.239.146 37.57.71.199 172.16.117.203
 Options -Indexes
 <FilesMatch "\.(tpl|ini|log)">
  Order deny,allow
