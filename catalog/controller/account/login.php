@@ -45,26 +45,6 @@ class ControllerAccountLogin extends Controller
             }
         }
 
-        $this->data['breadcrumbs'] = array();
-
-        $this->data['breadcrumbs'][] = array(
-            'text' => $this->language->get('text_home'),
-            'href' => $this->url->link('common/home'),
-            'separator' => false
-        );
-
-        $this->data['breadcrumbs'][] = array(
-            'text' => $this->language->get('text_account'),
-            'href' => $this->url->link('account/account', '', 'SSL'),
-            'separator' => $this->language->get('text_separator')
-        );
-
-        $this->data['breadcrumbs'][] = array(
-            'text' => $this->language->get('text_login'),
-            'href' => $this->url->link('account/login', '', 'SSL'),
-            'separator' => $this->language->get('text_separator')
-        );
-
         $this->data['heading_title'] = $this->language->get('heading_title');
 
         $this->data['text_new_customer'] = $this->language->get('text_new_customer');
