@@ -6,3 +6,7 @@
 .idea/*
 .idea
 /.idea/
+/config.php
+/config_dev.php
+/admin/config.php
+/admin/config_dev.php
