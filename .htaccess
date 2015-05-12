@@ -1,0 +1,26 @@
+# Un comment it to restrict access from not listed in ip addresses
+#order deny,allow
+#deny from all
+#allow from 81.17.135.214 81.17.135.142 109.86.239.146 37.57.71.199 172.16.117.203
+Options -Indexes
+<FilesMatch "\.(tpl|ini|log)">
+ Order deny,allow
+ Deny from all
+</FilesMatch>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\ HTTP/
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ / [R=301,L]
+RewriteRule ^sitemap.xml$ index.php?route=feed/google_sitemap [L]
+RewriteRule ^googlebase.xml$ index.php?route=feed/google_base [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !.*\.(ico|gif|jpg|jpeg|png|js|css)
+RewriteRule ^([^?]*) index.php?_route_=$1 [L,QSA]

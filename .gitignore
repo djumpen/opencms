@@ -1,0 +1,8 @@
+.buildpath
+.project 
+.settings/
+/pagecache/cachefiles/*.gz
+/.project
+.idea/*
+.idea
+/.idea/

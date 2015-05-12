@@ -1,0 +1,15 @@
+
+.editbox
+{
+display:none
+}
+.editbox
+{
+font-size:12px;
+border:solid 1px #000;
+
+}
+.edit_tr:hover
+{
+    cursor:pointer;
+}

@@ -1,0 +1,173 @@
+html{
+	width: 100%;
+	height: 100%;
+	overflow-y:visible!important;
+}
+body {
+  background: #fff;
+  color: #555;
+  line-height: 20px;
+  overflow: auto!important;
+  height: 100%;
+  width:100%;
+
+}
+iframe{
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+body a{
+	 text-decoration: none;
+}
+#menu-toolbars a.btn-action,#menu-toolbars  a.btn-action	 {
+	color: #FFF
+}
+table td{
+	  font-size: 12px;
+}
+.form-setting{
+	display: none;
+}
+.form-setting > .arrow{
+	left: 60px!important;
+}
+.form-setting h3{
+  cursor:hand;
+  cursor:grab;
+  cursor:-moz-grab;
+  cursor:-webkit-grab;
+}
+.form-setting h3 span{
+	cursor: hand;
+	cursor:pointer;
+}
+
+.pavo-widget{
+	position: relative;
+		padding: 16px 12px;
+		margin: 1px 0;
+		border: solid 1px #FCF2F2;
+} 
+.pavo-widget:hover{
+	border-color:#DFB5B4;
+}
+.pavo-widget .w-setting{
+	background: url(../image/delete.png) no-repeat center center #DFB5B4;
+	width: 30px;
+	height: 30px;
+	z-index: 10000;
+	position: absolute;
+	top: 0px;
+	left:0px;
+	display: none;
+	cursor: hand;
+	cursor:pointer;
+
+
+}
+.pavo-widget:hover .w-setting{
+	display: block;
+}
+
+
+ 
+
+
+.disable-menu .dropdown-menu, .disable-menu .caret{
+	display: none!important;
+}
+ 
+
+#pav-megamenu-liveedit{
+	position: relative;
+}
+ 
+.megamenu-wrap {
+ 	margin-top: 80px;
+ }
+.megamenu .menu-desc{
+	display: none;
+}
+
+.megamenu li.mega-group > a .caret{
+	display:none;
+}
+ 
+.megamenu ul{
+	margin:0;
+	padding:0
+}
+.megamenu ul li{
+	list-style:none;
+}
+
+ 
+ .dropdown-submenu > .dropdown-menu {
+    border-radius: 0 6px 6px 6px;
+    left: 100%;
+    margin-left: -1px;
+    margin-top: -6px;
+    top: 0;
+}
+li.dropdown-submenu {
+	position:relative;
+}
+ 
+.nav.megamenu > li:last-child {
+}
+
+li.parent > div { }
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+}
+.dropdown-submenu > a:after {
+
+    margin-right: -10px;
+    margin-top: -22px;
+}
+
+ 
+.dropdown-menu-inner .row{
+	margin: 2px 3px; 
+	min-height: 40px;
+	
+	padding: 5px 0px;
+	border: solid 1px #FFF
+ 
+}
+.dropdown-menu-inner .row.active, .dropdown-menu-inner .row:hover{
+	border: #F1E7BC solid 1px;
+	background: #FEFBED;
+}
+.megamenu .mega-col > div{
+
+	background: #F8F8F8;
+	border: #F7F7F9 solid 1px;
+	padding: 6px; 
+}
+.megamenu .mega-col.active > div, .megamenu .mega-col:hover > div  {
+	border: solid 1px #DFB5B4; background: #FCF2F2
+}	
+
+ 
+
+
+.megamenu .cols1{
+min-width:200px;
+}
+.megamenu .cols2{
+	min-width:500px;
+}
+.megamenu .cols3{
+	min-width:740px;
+}
+ 
+.megamenu .mega-group  > a .menu-title {
+    font-size: 110%;
+    font-weight: bold;	
+}
+
+ 

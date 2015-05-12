@@ -1,0 +1,32 @@
+<?php
+$_['heading_title']	=	'Категории';
+$_['text_success']	=	'Список категорий обновлен!';
+$_['text_default']	=	'Основной магазин';
+$_['text_image_manager']	=	'Управление изображениями';
+$_['text_browse']	=	'Просмотр файлов';
+$_['text_clear']	=	'Убрать изображение';
+$_['text_is_information']	=	'В информационных категориях не отображаются продукты и боковая панель.';
+$_['column_name']	=	'Название категории';
+$_['column_sort_order']	=	'Порядок сортировки';
+$_['column_action']	=	'Действие';
+$_['entry_custom_title']	=	'Пользовательское название: <i class="fa fa-question-circle" data-toggle="tooltip"  data-original-title="Оставьте пустым, если хотите, чтобы отображалось название по умолчанию"></i> ';
+$_['entry_name']	=	'Название категории:';
+$_['entry_meta_keyword']	=	'META Keywords:';
+$_['entry_meta_description']	=	'META Description:';
+$_['entry_description']	=	'Описание:';
+$_['entry_parent']	=	'Родительская категория:';
+$_['entry_filter']	=	'Фильтры: <i class="fa fa-question-circle" data-toggle="tooltip"  data-original-title="Автодополнение"></i> ';
+$_['entry_store']	=	'Магазины:';
+$_['entry_keyword']	=	'SEO Keyword:<i class="fa fa-question-circle" data-toggle="tooltip"  data-original-title="Используйте тире вместо пробелов, убедитесь, что ключевые слова являются уникальными "></i> ';
+$_['entry_image']	=	'Изображение категории:';
+$_['entry_top']	=	'Главное меню:<i class="fa fa-question-circle" data-toggle="tooltip"  data-original-title="Показывается в верхней строке меню. Работает только для главных родительских категорий."></i> ';
+$_['entry_is_information']	=	'Информационная категория:';
+$_['entry_column']	=	'Столбцы: <i class="fa fa-question-circle" data-toggle="tooltip"  data-original-title="Число столбцов для использования в нижних 3 категориях. Работает только для главных родительских категорий."></i>';
+$_['entry_sort_order']	=	'Порядок сортировки:';
+$_['entry_status']	=	'Статус:';
+$_['entry_layout']	=	'Изменить схему:';
+$_['error_warning']	=	'Внимательно проверьте форму на ошибки!';
+$_['error_permission']	=	'У Вас нет прав для изменения категорий!';
+$_['error_name']	=	'Название категории должно быть от 2 до 32 символов!';
+$_['column_seo_keyword']	=	'SEO URL';
+?>

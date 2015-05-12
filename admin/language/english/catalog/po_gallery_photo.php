@@ -1,0 +1,31 @@
+<?php
+$_['heading_title']	=	'PO Gallery Photos';
+$_['text_success']	=	'Success: You have modified photos!';
+$_['text_plus']	=	'+';
+$_['text_minus']	=	'-';
+$_['text_default']	=	'Default';
+$_['text_image_manager']	=	'Image Manager';
+$_['text_browse']	=	'Browse Files';
+$_['text_clear']	=	'Clear Image';
+$_['text_option']	=	'Option';
+$_['text_option_value']	=	'Option Value';
+$_['text_percent']	=	'Percentage';
+$_['text_amount']	=	'Fixed Amount';
+$_['column_name']	=	'Photo Name';
+$_['column_image']	=	'Image';
+$_['column_status']	=	'Status';
+$_['column_action']	=	'Action';
+$_['entry_name']	=	'Photo Name:';
+$_['entry_meta_keyword']	=	'Meta Tag Keywords:';
+$_['entry_meta_description']	=	'Meta Tag Description:';
+$_['entry_description']	=	'Description:';
+$_['entry_store']	=	'Stores:';
+$_['entry_keyword']	=	'SEO Keyword: <i class="fa fa-question-circle" data-toggle="tooltip"  data-original-title="Do not use spaces instead replace spaces with - and make sure the keyword is globally unique."></i> ';
+$_['entry_image']	=	'Image:';
+$_['entry_status']	=	'Status:';
+$_['entry_sort_order']	=	'Sort Order:';
+$_['entry_album']	=	'Albums:';
+$_['error_warning']	=	'Warning: Please check the form carefully for errors!';
+$_['error_permission']	=	'Warning: You do not have permission to modify photos!';
+$_['error_name']	=	'Photo Name must be greater than 3 and less than 255 characters!';
+?>

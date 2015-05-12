@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)http://demo.perfectcod.es/admin/view/javascript/bootstrap-select/test.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <script type="text/javascript" src="./test_files/jquery.min.js"></script>
+    <script type="text/javascript" src="./test_files/bootstrap-select.js.pagespeed.ce.sb4Ob-81_O.js"></script>
+    <link rel="stylesheet" type="text/css" href="./test_files/bootstrap-select.css.pagespeed.ce.x7PbAVT5eZ.css">
+
+    <!-- 3.0 -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./test_files/bootstrap.min.js"></script>
+
+    <!-- 2.3.2
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.js"></script>
+    -->
+    <script type="text/javascript">
+        $(window).on('load', function () {
+
+            $('.selectpicker').selectpicker({
+                'selectedText': 'cat'
+            });
+
+            // $('.selectpicker').selectpicker('hide');
+        });
+    </script>
+</head>
+<body style="">
+    <label for="id_select">Test label YEag</label>
+    <select id="id_select" class="selectpicker bla bla bli" multiple="" data-live-search="true" style="display: none;">
+        <option>cow</option>
+        <option>bull</option>
+        <option class="get-class" disabled="">ox</option>
+        <optgroup label="test" data-subtext="another test" data-icon="icon-ok">
+            <option>ASD</option>
+            <option selected="">Bla</option>
+            <option>Ble</option>
+        </optgroup>
+    </select><div class="btn-group bootstrap-select show-tick bla bli"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" data-id="id_select"><div class="filter-option pull-left">Bla</div>&nbsp;<div class="caret"></div></button><div class="dropdown-menu open"><div class="bootstrap-select-searchbox"><input type="text" class="input-block-level form-control"></div><ul class="dropdown-menu inner" role="menu"><li rel="0"><a tabindex="0" class="" style=""><span class="text">cow</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="1"><a tabindex="0" class="" style=""><span class="text">bull</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="2" class="disabled"><a tabindex="-1" class="get-class" style="" href="http://demo.perfectcod.es/admin/view/javascript/bootstrap-select/test.html#"><span class="text">ox</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="3"><div class="div-contain"><div class="divider"></div></div><dt><i class="icon-ok"></i> <span class="text">test<small class="muted">another test</small></span></dt><a tabindex="0" class="opt " style=""><span class="text">ASD</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="4" class="selected"><a tabindex="0" class="opt " style=""><span class="text">Bla</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="5"><a tabindex="0" class="opt " style=""><span class="text">Ble</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li></ul></div></div>
+
+
+</body></html>

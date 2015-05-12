@@ -1,0 +1,68 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600&subset=latin,cyrillic');
+.clearfix:after {
+  clear: both;
+  content: ' ';
+  display: block;
+}
+body {
+  color: #000;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  height: 100%;
+  line-height: 1.428571429;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: none;
+}
+#wrapper {
+  height: auto !important;
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: #357ebd;
+  font-family: 'Open Sans', sans-serif;
+}
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3 {
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+a {
+  color: #357ebd;
+}
+#top-module-container>div {
+  margin-top: 10px;
+  position: relative;
+}
+#top-module-container .control-link {
+  color: dodgerblue;
+  cursor: pointer;
+}
+#top-module-container .control-link:hover {
+  border-bottom: 0px;
+  border-bottom: 1px dashed #999;
+}
+form[name="language"] img {
+  cursor: pointer;
+  width: 20px;
+}
+form[name="language"] .current {
+  border: 2px solid dodgerblue;
+}
