@@ -27,6 +27,7 @@ class ModelAccountCustomer extends Model {
             if(!isset($data[$field])) $data[$field] = '';
         }
 
+        //TODO: generate password
         $data['password'] = '7542';
 
 		$this->load->model('account/customer_group');
@@ -115,6 +116,19 @@ class ModelAccountCustomer extends Model {
 			}
 		}
 	}
+
+    public function generateRefCode($length){
+        $characters = '0123456789abcdefghijkmnopqrstuvwxyz';
+        $code = '';
+        for ($i = 0; $i < $length; $i++) {
+            $code .= $characters[rand(0, utf8_strlen($characters) - 1)];
+        }
+        if(!$this->getPartnerIdByRefCode($code)){
+            return $code;
+        } else {
+            $this->generateRefCode($length);
+        }
+    }
 
 	public function editCustomer($data) {
 		$this->db->query("UPDATE " . DB_PREFIX . "customer SET

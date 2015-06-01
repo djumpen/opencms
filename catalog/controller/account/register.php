@@ -6,6 +6,7 @@ class ControllerAccountRegister extends Controller {
         $this->language->load('account/register');
 
         if ($this->customer->isLogged()) {
+            //TODO: delete on production
             $this->customer->logout(); // dev
             die(json_encode([
                 'error' => true,
@@ -15,8 +16,15 @@ class ControllerAccountRegister extends Controller {
 
         if($this->validate()){
             $this->load->model('account/customer');
-            $this->model_account_customer->addCustomer($this->request->post);
+
+            $data = $this->request->post;
+            $data['parent_id'] = 0;
+            $data['ref_code'] = $this->model_account_customer->generateRefCode(5);
+
+            $this->model_account_customer->addCustomer($data);
+
             $this->customer->login($this->request->post['email'], '', true);
+
             unset($this->session->data['guest']);
 
             die(json_encode([
