@@ -28,7 +28,7 @@ class ModelAccountCustomer extends Model {
         }
 
         //TODO: generate password
-        $data['password'] = '7542';
+        $data['password'] = $this->generateRefCode(6);
 
 		$this->load->model('account/customer_group');
 
@@ -44,6 +44,8 @@ class ModelAccountCustomer extends Model {
 		            ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "',
 		            status = '1',
 		            approved = '" . (int)!$customer_group_info['approval'] . "',
+		            ref_code = '" . $data['ref_code'] . "',
+		            parent_id = '" . $data['parent_id'] . "',
 		            date_added = NOW()");
 
 		$customer_id = $this->db->getLastId();
@@ -55,29 +57,13 @@ class ModelAccountCustomer extends Model {
 
 		$this->language->load('mail/customer');
 
-		$subject = sprintf($this->language->get('text_subject'), $this->config->get('config_name'));
-
-		$message = sprintf($this->language->get('text_welcome'), $this->config->get('config_name')) . "\n\n";
-
-		if (!$customer_group_info['approval']) {
-			$message .= $this->language->get('text_login') . "\n";
-		} else {
-			$message .= $this->language->get('text_approval') . "\n";
-		}
-
-		$message .= $this->url->link('account/login', '', 'SSL') . "\n\n";
-		$message .= $this->language->get('text_services') . "\n\n";
-		$message .= $this->language->get('text_thanks') . "\n";
-		$message .= $this->config->get('config_name');
+		$subject = $this->language->get('registration_subject');
+		$message = sprintf(file_get_contents(DIR_MAIL . 'registration' . '.html'), $this->language->get('registration_text'));
 
 		$mail = new Mail();
-		$mail->protocol = $this->config->get('config_mail_protocol');
-		$mail->parameter = $this->config->get('config_mail_parameter');
-		$mail->hostname = $this->config->get('config_smtp_host');
-		$mail->username = $this->config->get('config_smtp_username');
-		$mail->password = $this->config->get('config_smtp_password');
-		$mail->port = $this->config->get('config_smtp_port');
-		$mail->timeout = $this->config->get('config_smtp_timeout');				
+
+
+
 		$mail->setTo($data['email']);
 		$mail->setFrom($this->config->get('config_email'));
 		$mail->setSender($this->config->get('config_name'));
@@ -85,7 +71,7 @@ class ModelAccountCustomer extends Model {
 		$mail->setText(html_entity_decode($message, ENT_QUOTES, 'UTF-8'));
 		$mail->send();
 
-		// Send to main admin email if new account email is enabled
+		/*// Send to main admin email if new account email is enabled
 		if ($this->config->get('config_account_mail')) {
 			$message  = $this->language->get('text_signup') . "\n\n";
 			$message .= $this->language->get('text_website') . ' ' . $this->config->get('config_name') . "\n";
@@ -114,7 +100,7 @@ class ModelAccountCustomer extends Model {
 					$mail->send();
 				}
 			}
-		}
+		}*/
 	}
 
     public function generateRefCode($length){
@@ -123,14 +109,25 @@ class ModelAccountCustomer extends Model {
         for ($i = 0; $i < $length; $i++) {
             $code .= $characters[rand(0, utf8_strlen($characters) - 1)];
         }
-        if(!$this->getPartnerIdByRefCode($code)){
+        if(!$this->getCustomerIdByRefCode($code)){
             return $code;
         } else {
             $this->generateRefCode($length);
         }
     }
 
-	public function editCustomer($data) {
+    public function getCustomerIdByRefCode($code){
+        if(utf8_strlen($code) < 2)
+            return false;
+        $query = $this->db->query("SELECT customer_id FROM customer WHERE ref_code = '" . $this->db->escape($code) . "'");
+        if($query->num_rows)
+            return $query->row['customer_id'];
+        else
+            return false;
+    }
+
+
+    public function editCustomer($data) {
 		$this->db->query("UPDATE " . DB_PREFIX . "customer SET
 		firstname = '" . $this->db->escape($data['firstname']) . "',
 		lastname = '" . $this->db->escape($data['lastname']) . "',

@@ -21,6 +21,7 @@ define('DIR_IMAGE', DIR_ROOT . 'image/');
 define('DIR_CACHE', DIR_ROOT . 'system/cache/');
 define('DIR_DOWNLOAD', DIR_ROOT . 'download/');
 define('DIR_LOGS', DIR_ROOT . 'system/logs/');
+define('DIR_MAIL', DIR_APPLICATION . 'mail/');
 
 // PAGE CACHE
 define('PAGE_CACHING', FALSE);
