@@ -64,6 +64,14 @@ class ModelAccountCustomer extends Model {
 
 
 
+        $headers = array("From: from@example.com",
+            "Reply-To: replyto@example.com",
+            "X-Mailer: PHP/" . PHP_VERSION
+        );
+        mail('demoniros@gmail.com', 'mail()', 'dummy message', implode("\n", $headers));
+
+
+
 		$mail->setTo($data['email']);
 		$mail->setFrom($this->config->get('config_email'));
 		$mail->setSender($this->config->get('config_name'));
