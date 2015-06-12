@@ -1,13 +1,16 @@
-<div id="top-module-container">
-    <? if(TRUE): ?>
+<body class="<?php if(isset($page_classes)) { print $page_classes; } ?>">
+<header>
+
+    <div id="top-module-container">
+        <? if(TRUE): ?>
         <script src="catalog/view/javascript/ajax2login.js"></script>
         <script>
             $(document).ready(function(){
                 var
-                loginModule = $('#top-login-module' ),
-                forgotModule = $('#top-forgot-module'),
-                registerModule = $('#top-register-module'),
-                currentModule;
+                        loginModule = $('#top-login-module' ),
+                        forgotModule = $('#top-forgot-module'),
+                        registerModule = $('#top-register-module'),
+                        currentModule;
 
                 Ajax2login('#top-register-module form', 'register');
                 Ajax2login('#top-login-module form', 'login');
@@ -33,9 +36,9 @@
                     currentModule.animate({ top: '-100px' }, 300, 'easeInCirc', function () {
                         currentModule.hide();
                         nextModule
-                            .css('top', '-100px')
-                            .show()
-                            .animate({ top: '0px' }, 300, 'easeOutCirc');
+                                .css('top', '-100px')
+                                .show()
+                                .animate({ top: '0px' }, 300, 'easeOutCirc');
                         currentModule = nextModule;
                     });
                 });
@@ -69,10 +72,43 @@
             <span class="register-form-link control-link"><?=$link_register;?></span>
             <span class="forgot-form-link control-link"><?=$link_forgot;?></span>
         </div>
-    <? else: ?>
+        <? else: ?>
         <span class="top-links">
             <a href="">Личный кабинет</a>
             <a href="">Выйти</a>
         </span>
-    <? endif; ?>
-</div>
+        <? endif; ?>
+    </div>
+
+
+
+    <div class="head-container">
+        <div class="head-logo"><img src="/catalog/view/theme/default/image/logo-1.png" alt="logo-1"/>
+
+            <h1>FREEPEO</h1></div>
+        <div class="head-button">
+            <button><img src="/catalog/view/theme/default/image/button-arrow.png" alt="arrow"
+                         style="vertical-align: middle"> Вход
+            </button>
+            <?php echo $language; ?>
+        </div>
+        <div class="shape">
+            <img src="/catalog/view/theme/default/image/shape-1.png" alt="shape-1"/> <br/>
+
+            <div class="shape-text">FREEPEO - THE PROJECT <br/> THAT WILL CHANGE <br/> YOUR LIFE</div>
+            <br/>
+            <img src="/catalog/view/theme/default/image/shape-2.png" alt="shape-2"/>
+        </div>
+        <div class="email">
+            <span>Get the advantages of being the first!</span> <br/>
+            <input type="text" size="30" placeholder="Email Address">
+            <input type="submit" value="Get Started">
+        </div>
+        <div class="man-1">
+            <img src="/catalog/view/theme/default/image/man-1.png" alt="man-1"/>
+        </div>
+    </div>
+</header>
+<div id="wrapper">
+    <div class="main">
+

@@ -5,7 +5,7 @@
 <!--[if (gt IE 9)|!(IE)]><!-->
 <html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>">
 <!--<![endif]-->
-<head> 
+<head>
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=1024">
@@ -21,31 +21,28 @@
 	<?php if ($icon) { ?>
 	<link href="<?php echo $icon; ?>" rel="icon" />
 	<?php } ?>
-
-	<link href="catalog/view/theme/<?php echo $this->config->get('config_template'); ?>/js/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="catalog/view/theme/<?php echo $this->config->get('config_template'); ?>/js/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen" />
+    <link href="/catalog/view/theme/default/stylesheet/main.css" rel="stylesheet">
+	<link href="/catalog/view/theme/<?php echo $this->config->get('config_template'); ?>/js/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="/catalog/view/theme/<?php echo $this->config->get('config_template'); ?>/js/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen" />
 	<?php foreach ($styles as $style) { ?>
 	<link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 	<?php } ?>
-	
+
 	<script>
 		var LANGS = {};
 		<?php $arr = $this->language->getGroupData(); foreach($arr as $group => $langs){ ?>LANGS['<?php echo $group?>']={};<?php foreach($langs as $name_key => $value){?>LANGS['<?php echo $group?>']['<?php echo $name_key ;?>']='<?php echo $value ;?>';<?php } ?><?php } ?>
 	</script>
-	
-	<script src="catalog/view/javascript/jquery/jquery-2.0.3.min.js" type="text/javascript"></script>
-	<script src="catalog/view/javascript/jquery/ui/jquery-ui-1.10.3.custom.min.js"></script>
-	
+
+	<script src="/catalog/view/javascript/jquery/jquery-2.0.3.min.js" type="text/javascript"></script>
+	<script src="/catalog/view/javascript/jquery/ui/jquery-ui-1.10.3.custom.min.js"></script>
+
 	<?php foreach ($scripts as $script) { ?>
 	<script src="<?php echo $script; ?>" type="text/javascript"></script>
-	<?php } ?> 
+	<?php } ?>
 
 		<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<?php echo $google_analytics; ?>
 
-		</head>
-	<body class="<?php if(isset($page_classes)) { print $page_classes; } ?>">
-		<div id="wrapper">
-			<div class="main">
+</head>

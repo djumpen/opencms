@@ -35,7 +35,7 @@ define('STYLE_FOLDER', '/catalog/view/theme/default/stylesheet/');
 define('DB_DRIVER', 'mpdo');
 define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '7542');
+define('DB_PASSWORD', 'Dancer_1429061988');
 define('DB_DATABASE', 'freepeo_cms');
 define('DB_PREFIX', '');
 

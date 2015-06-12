@@ -1,4 +1,4 @@
-<?php  
+ <?php
 class ControllerCommonFooter extends Controller {
 	protected function index() {
 	    
@@ -66,7 +66,7 @@ class ControllerCommonFooter extends Controller {
 
 		$this->data['informations'] = array();
 
-		$this->data['powered'] = sprintf($this->language->get('text_powered'), ''.$this->config->get('config_name').'', date('Y', time()));
+		$this->data['powered'] = sprintf($this->language->get('text_powered'), date('Y', time()), $this->config->get('config_name'));
 
 		// Scripts appended to footer
 		$this->data['scripts'] = $this->document->getScripts(true);

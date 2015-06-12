@@ -1,4 +1,4 @@
 <?php
 // Text
-$_['text_powered']      = '<div class="copy">%s &copy; %s</div>';
+$_['text_powered']      = '&copy; <span>%s. %s. Все права защищены</span>';
 ?>
