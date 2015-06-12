@@ -32,6 +32,7 @@ define('SCRIPT_FOLDER', '/catalog/view/javascript/');
 define('TS_FOLDER', '/catalog/view/javascript/ts/');
 define('STYLE_FOLDER', '/catalog/view/theme/default/stylesheet/');
 
+
 // DB
 define('DB_DRIVER', 'mpdo');
 define('DB_HOSTNAME', 'localhost');
