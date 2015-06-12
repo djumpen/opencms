@@ -32,13 +32,12 @@ define('SCRIPT_FOLDER', '/catalog/view/javascript/');
 define('TS_FOLDER', '/catalog/view/javascript/ts/');
 define('STYLE_FOLDER', '/catalog/view/theme/default/stylesheet/');
 
-
 // DB
 define('DB_DRIVER', 'mpdo');
 define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'Dancer_1429061988');
-define('DB_DATABASE', 'freepeo_cms');
+define('DB_USERNAME', 'freepe_promo');
+define('DB_PASSWORD', 'KClKL1N?');
+define('DB_DATABASE', 'freepe_promo');
 define('DB_PREFIX', '');
 
 // OTHER

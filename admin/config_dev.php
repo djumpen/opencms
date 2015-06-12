@@ -9,8 +9,8 @@ define('HTTPS_CATALOG', 'http://' . $_SERVER['HTTP_HOST'] . '/');
 
 // DIR
 define('DIR_DOC_ROOT', getcwd() . '/');
-define('DIR_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/');
-define('DIR_APPLICATION', DIR_DOC_ROOT); 
+define('DIR_ROOT', $_SERVER['DOCUMENT_ROOT'] . '');
+define('DIR_APPLICATION', DIR_DOC_ROOT);
 define('DIR_SYSTEM', DIR_ROOT . 'system/');
 define('DIR_DATABASE', DIR_ROOT . 'system/database/');
 define('DIR_LANGUAGE', DIR_DOC_ROOT . 'language/');
@@ -26,11 +26,11 @@ define('SCRIPT_FOLDER', '/admin/view/javascript/');
 define('STYLE_FOLDER', '/admin/view/stylesheet/');
 
 // DB
-define('DB_DRIVER', 'mpdo');
+define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'Dancer_1429061988');
-define('DB_DATABASE', 'freepeo_cms');
+define('DB_USERNAME', 'freepe_promo');
+define('DB_PASSWORD', 'KClKL1N?');
+define('DB_DATABASE', 'freepe_promo');
 define('DB_PREFIX', '');
 
 // OTHER
