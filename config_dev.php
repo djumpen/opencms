@@ -36,7 +36,7 @@ define('STYLE_FOLDER', '/catalog/view/theme/default/stylesheet/');
 define('DB_DRIVER', 'mpdo');
 define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'asdasdad');
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'sdfsdf');
 define('DB_DATABASE', '');
 define('DB_PREFIX', '');
 
