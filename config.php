@@ -29,10 +29,10 @@ define('STYLE_FOLDER', '/catalog/view/theme/default/stylesheet/');
 
 // DB
 define('DB_DRIVER', 'mpdo');
-define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'root');
+define('DB_HOSTNAME', '');
+define('DB_USERNAME', '');
 define('DB_PASSWORD', '');
-define('DB_DATABASE', 'freepeo_cms');
+define('DB_DATABASE', '');
 define('DB_PREFIX', '');
 
 // OTHER
