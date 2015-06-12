@@ -6,12 +6,15 @@ class ControllerAccountRegister extends Controller {
         $this->language->load('account/register');
 
         if ($this->customer->isLogged()) {
+
             //TODO: delete on production
             $this->customer->logout(); // dev
-            die(json_encode([
+
+            // TODO: uncomment on production
+/*            die(json_encode([
                 'error' => true,
                 'messages' => [$this->language->get('text_already_logged')]
-            ]));
+            ]));*/
         }
 
         if($this->validate()){
@@ -21,6 +24,12 @@ class ControllerAccountRegister extends Controller {
             $data['parent_id'] = 0;
 
             $data['ref_code'] = $this->model_account_customer->generateRefCode(5);
+
+            if(isset($this->session->data['ref_code'])){
+                if($pid = $this->model_account_customer->getCustomerIdByRefCode($this->session->data['ref_code'])){
+                    $data['parent_id'] = $pid;
+                }
+            }
 
             $this->model_account_customer->addCustomer($data);
 

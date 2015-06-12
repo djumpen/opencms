@@ -16,4 +16,14 @@ $_['text_company']        = 'Компания:';
 $_['text_email']          = 'E-Mail:';
 $_['text_telephone']      = 'Телефон:';
 
+
+// Registration
+$_['registration_subject'] = 'Лоло';
+$_['registration_text'] = 'Текст регистрационного сообщения';
+
+// 1 day
+$_['1_day_subject'] = '';
+
+//...
+
 ?>

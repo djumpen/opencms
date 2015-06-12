@@ -166,7 +166,9 @@ class Mail {
 					}
 				}
 
-				if (substr($this->hostname, 0, 3) == 'tls') {
+                $reply = '';
+                if (substr($this->hostname, 0, 3) == 'tls') {
+//if (true) {
 					fputs($handle, 'STARTTLS' . $this->crlf);
 
 					while ($line = fgets($handle, 515)) {
@@ -402,5 +404,6 @@ class Mail {
 			}
 		}
 	}
+
 }
 ?>
