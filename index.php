@@ -10,7 +10,6 @@ function_exists('memory_get_usage') ? define('MEM_USAGE', memory_get_usage()) : 
 
 $dev_env = true;
 
-
 // Configuration
 if($dev_env) {
     if (file_exists('config_dev.php')) {
