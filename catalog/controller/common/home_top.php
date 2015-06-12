@@ -11,6 +11,11 @@ class ControllerCommonHomeTop extends Controller {
         $this->applyLangVars();
 
         $this->template = 'default/template/common/home_top.tpl';
+
+        $this->children = array(
+            'module/language'
+        );
+
 		$this->response->setOutput($this->render());
 	}
 }

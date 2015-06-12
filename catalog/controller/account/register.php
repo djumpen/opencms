@@ -22,6 +22,7 @@ class ControllerAccountRegister extends Controller {
 
             $data = $this->request->post;
             $data['parent_id'] = 0;
+
             $data['ref_code'] = $this->model_account_customer->generateRefCode(5);
 
             if(isset($this->session->data['ref_code'])){

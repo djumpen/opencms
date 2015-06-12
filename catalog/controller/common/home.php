@@ -1,6 +1,5 @@
 <?php  
 class ControllerCommonHome extends Controller {
-
     public function index() {
 
 	    $this->session->data['proute'] = 'common/home';
@@ -21,7 +20,8 @@ class ControllerCommonHome extends Controller {
 		$this->template = 'default/template/common/home.tpl';
 
 		$this->children = array(
-            'module/language',
+
+
             'common/home_top',
             'common/footer',
 			'common/header'
