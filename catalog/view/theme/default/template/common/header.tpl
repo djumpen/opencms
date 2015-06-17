@@ -7,8 +7,7 @@
 <!--<![endif]-->
 <head>
 	<meta charset="UTF-8" />
-	<meta name="format-detection" content="telephone=no">
-	<meta name="viewport" content="width=1024">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?php print $this->document->getTitle(); ?></title>
 	<base href="<?php echo $base; ?>" />
 	<?php if ($description) { ?>
@@ -22,11 +21,13 @@
 	<link href="<?php echo $icon; ?>" rel="icon" />
 	<?php } ?>
     <link href="/catalog/view/theme/default/stylesheet/main.css" rel="stylesheet">
+    <!--
 	<link href="/catalog/view/theme/<?php echo $this->config->get('config_template'); ?>/js/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="/catalog/view/theme/<?php echo $this->config->get('config_template'); ?>/js/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen" />
 	<?php foreach ($styles as $style) { ?>
 	<link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 	<?php } ?>
+	-->
 
 	<script>
 		var LANGS = {};
