@@ -65,12 +65,12 @@ var Ajax2login = function(selector, action){
                     data: _this.form,
                     dataType: 'json',
                     type: 'post',
-                    success: function(response){
-                        if(response.ok) {
+                    success: function(res){
+                        if(!res.error) {
                             window.location.href = '/';
-                        } else if(response.error) {
-                            for(key in response.messages) {
-                                _this.error(response.messages[key]);
+                        } else {
+                            for(key in res.messages) {
+                                _this.error(res.messages[key]);
                             }
                         }
                     }
@@ -97,18 +97,8 @@ var Ajax2login = function(selector, action){
             });
         },
         error: function(error){
-            var opts = {
-                text: error,
-                styling: 'bootstrap3',
-                addclass: 'oc_noty',
-                type: 'error',
-                icon: 'picon picon-32 picon-fill-color',
-                opacity: .8,
-                nonblock: {
-                    nonblock: true
-                }
-            };
-            new PNotify(opts);
+            console.error(error);
+            toastr.error(error);
         }
     }
     obj.bind(selector, action);
