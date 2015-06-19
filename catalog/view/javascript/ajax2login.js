@@ -39,7 +39,7 @@ var Ajax2login = function(selector, action){
                     dataType: 'json',
                     type: 'post',
                     success: function(response){
-                        if(response.ok) {
+                        if(!response.error) {
                             if(window.location.pathname == '/logout'){
                                 window.location.href = '/';
                             } else {

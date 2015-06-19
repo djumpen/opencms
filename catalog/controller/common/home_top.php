@@ -10,6 +10,8 @@ class ControllerCommonHomeTop extends Controller {
         $this->language->load('common/home_top');
         $this->applyLangVars();
 
+        $this->data['logged'] = $this->customer->isLogged();
+
         $this->template = 'default/template/common/home_top.tpl';
 
         $this->children = array(

@@ -33,7 +33,7 @@ class ControllerAccountRegister extends Controller {
 
             $this->model_account_customer->addCustomer($data);
 
-            $this->customer->login($this->request->post['email'], '', true);
+            //$this->customer->login($this->request->post['email'], '', true);
 
             unset($this->session->data['guest']);
 

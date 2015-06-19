@@ -30,3 +30,9 @@ $.fn.serializeObject = function() {
     });
     return o;
 };
+
+$(document).ready(function(){
+     $('#login-btn').on('click', function(){
+         $('#top-module-container').slideToggle('fast');
+     })
+});

@@ -1,4 +1,4 @@
-<body class="<?php if(isset($page_classes)) { print $page_classes; } ?>">
+<body>
 <header>
 
     <div id="top-module-container">
@@ -72,7 +72,9 @@
             <span class="register-form-link control-link"><?=$link_register;?></span>
             <span class="forgot-form-link control-link"><?=$link_forgot;?></span>
         </div>
+
         <? else: ?>
+
         <span class="top-links">
             <a href="">Личный кабинет</a>
             <a href="">Выйти</a>
@@ -87,11 +89,18 @@
 
                 <h1>FREEPEO</h1></div>
             <div class="head-button">
-                <button><img src="/catalog/view/theme/default/image/button-arrow.png" alt="arrow"
-                             style="vertical-align: middle"> Вход
-                </button>
+                <? if($logged):?>
+                    <a href="<?=$this->url->link('account/logout');?>">Выход</a>
+                <? else: ?>
+                    <div id="login-btn">
+                        <img src="/catalog/view/theme/default/image/button-arrow.png" alt="arrow" style="vertical-align: middle">
+                        Вход
+                    </div>
+                <? endif; ?>
+
                 <?php echo $language; ?>
             </div>
+
             <div class="shape">
                 <img src="/catalog/view/theme/default/image/shape-1.png" alt="shape-1"/> <br/>
 
