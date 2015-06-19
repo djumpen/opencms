@@ -226,7 +226,7 @@ $controller->dispatch($action, new Action('error/not_found'));
 $response->output();
 
 
-$debug_ips = array('127.0.0.1');
+$debug_ips = array('127.0.0.1', '109.87.31.220');
 if (
     (   isset($_SERVER['REMOTE_ADDR']) && in_array($_SERVER['REMOTE_ADDR'], $debug_ips) ||
         isset($_SERVER['HTTP_X_REAL_IP']) && in_array($_SERVER['REMOTE_ADDR'], $debug_ips)

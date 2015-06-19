@@ -5,9 +5,9 @@
         <? if(TRUE): ?>
         <script src="catalog/view/javascript/ajax2login.js"></script>
         <script>
-            $(document).ready(function(){
+            $(document).ready(function () {
                 var
-                        loginModule = $('#top-login-module' ),
+                        loginModule = $('#top-login-module'),
                         forgotModule = $('#top-forgot-module'),
                         registerModule = $('#top-register-module'),
                         currentModule;
@@ -22,23 +22,23 @@
                 registerModule.show();
                 currentModule = registerModule;
 
-                $('#top-module-container .control-link').on('click', function(){
+                $('#top-module-container .control-link').on('click', function () {
                     var _this = $(this);
                     var nextModule;
 
-                    if(_this.hasClass('register-form-link'))
+                    if (_this.hasClass('register-form-link'))
                         nextModule = registerModule;
-                    if(_this.hasClass('login-form-link'))
+                    if (_this.hasClass('login-form-link'))
                         nextModule = loginModule;
-                    if(_this.hasClass('forgot-form-link'))
+                    if (_this.hasClass('forgot-form-link'))
                         nextModule = forgotModule;
 
-                    currentModule.animate({ top: '-100px' }, 300, 'easeInCirc', function () {
+                    currentModule.animate({top: '-100px'}, 300, 'easeInCirc', function () {
                         currentModule.hide();
                         nextModule
                                 .css('top', '-100px')
                                 .show()
-                                .animate({ top: '0px' }, 300, 'easeOutCirc');
+                                .animate({top: '0px'}, 300, 'easeOutCirc');
                         currentModule = nextModule;
                     });
                 });
@@ -81,31 +81,32 @@
     </div>
 
 
+    <div class="header">
+        <div class="head-container">
+            <div class="head-logo"><img src="/catalog/view/theme/default/image/logo-1.png" alt="logo-1"/>
 
-    <div class="head-container">
-        <div class="head-logo"><img src="/catalog/view/theme/default/image/logo-1.png" alt="logo-1"/>
+                <h1>FREEPEO</h1></div>
+            <div class="head-button">
+                <button><img src="/catalog/view/theme/default/image/button-arrow.png" alt="arrow"
+                             style="vertical-align: middle"> Вход
+                </button>
+                <?php echo $language; ?>
+            </div>
+            <div class="shape">
+                <img src="/catalog/view/theme/default/image/shape-1.png" alt="shape-1"/> <br/>
 
-            <h1>FREEPEO</h1></div>
-        <div class="head-button">
-            <button><img src="/catalog/view/theme/default/image/button-arrow.png" alt="arrow"
-                         style="vertical-align: middle"> Вход
-            </button>
-            <?php echo $language; ?>
-        </div>
-        <div class="shape">
-            <img src="/catalog/view/theme/default/image/shape-1.png" alt="shape-1"/> <br/>
-
-            <div class="shape-text">FREEPEO - THE PROJECT <br/> THAT WILL CHANGE <br/> YOUR LIFE</div>
-            <br/>
-            <img src="/catalog/view/theme/default/image/shape-2.png" alt="shape-2"/>
-        </div>
-        <div class="email">
-            <span>Get the advantages of being the first!</span> <br/>
-            <input type="text" size="30" placeholder="Email Address">
-            <input type="submit" value="Get Started">
-        </div>
-        <div class="man-1">
-            <img src="/catalog/view/theme/default/image/man-1.png" alt="man-1"/>
+                <div class="shape-text">FREEPEO - THE PROJECT <br/> THAT WILL CHANGE <br/> YOUR LIFE</div>
+                <br/>
+                <img src="/catalog/view/theme/default/image/shape-2.png" alt="shape-2"/>
+            </div>
+            <div class="email">
+                <span>Get the advantages of being the first!</span> <br/>
+                <input type="text" size="30" placeholder="Email Address">
+                <input type="submit" value="Get Started">
+            </div>
+            <div class="man-1">
+                <img src="/catalog/view/theme/default/image/man-1.png" alt="man-1"/>
+            </div>
         </div>
     </div>
 </header>
