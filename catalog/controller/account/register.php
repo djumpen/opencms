@@ -39,7 +39,7 @@ class ControllerAccountRegister extends Controller {
 
             die(json_encode([
                 'error' => false,
-                'messages' => [$this->language->get('text_success')]
+                'message' => $this->language->get('text_success')
             ]));
         }
 

@@ -67,7 +67,7 @@ var Ajax2login = function(selector, action){
                     type: 'post',
                     success: function(res){
                         if(!res.error) {
-                            window.location.href = '/';
+                            toastr.success(res.message);
                         } else {
                             for(key in res.messages) {
                                 _this.error(res.messages[key]);
