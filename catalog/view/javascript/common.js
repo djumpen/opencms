@@ -42,6 +42,11 @@ $(document).ready(function(){
      });
 
 
-    $(window).on('resize', function () {
+    $('.overlay,.close').click(function() {
+        $(this).closest('.alert-holder').toggle();
+    });
+
+    $('a.login').click(function() {
+        $('.alert-holder').toggle();
     });
 });
