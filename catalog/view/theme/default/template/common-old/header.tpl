@@ -42,4 +42,3 @@
 
     <?php echo $google_analytics; ?>
 </head>
-<body                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       >

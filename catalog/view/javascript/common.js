@@ -30,9 +30,18 @@ $.fn.serializeObject = function() {
     });
     return o;
 };
+jQuery.fn.exist = function () {
+    var exist;
+    this.length >= 1 ? exist = true : exist = false;
+    return exist;
+};
 
 $(document).ready(function(){
      $('#login-btn').on('click', function(){
          $('#top-module-container').slideToggle('fast');
-     })
+     });
+
+
+    $(window).on('resize', function () {
+    });
 });
