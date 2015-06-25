@@ -64,7 +64,7 @@ class ModelAccountCustomer extends Model {
         $html = $this->renderTemplate(DIR_MAIL . 'registration.html', [
             'text_hello' => $this->language->get('text_hello'),
             'text_activation' => sprintf($this->language->get('text_activation'), $data['activation_code']),
-            'text_password' => sprintf($this->language->get('text_activation'), $data['password'])
+            'text_password' => sprintf($this->language->get('text_password'), $data['password'])
         ]);
 
 		$mail = new Mail();
@@ -83,7 +83,7 @@ class ModelAccountCustomer extends Model {
 		$mail->setSender($this->config->get('config_name'));
 		$mail->setSubject(html_entity_decode($subject, ENT_QUOTES, 'UTF-8'));
 		//$mail->setText(html_entity_decode($html, ENT_QUOTES, 'UTF-8'));
-        $mail->setHtml($html, ENT_QUOTES, 'UTF-8');
+        $mail->setHtml(html_entity_decode($html), ENT_QUOTES, 'UTF-8');
 		$mail->send();
 
 	}
