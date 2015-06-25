@@ -19,8 +19,9 @@ $_['text_telephone']      = 'Телефон:';
 
 // Registration
 $_['registration_subject'] = 'Спасибо за выявленный интерес';
-$_['registration_text'] = 'Текст регистрационного сообщения';
-//$_['referal_link'] = '<a href="' . HTTP_SERVER . 'register?';
+$_['text_hello'] = 'Приветственный текст';
+$_['text_password'] = 'Ваш текущий пароль: %s';
+$_['text_activation'] = 'Активируйте подписку по ссылке <a href="%s">%s</a>';
 
 
 // 1 day

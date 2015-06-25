@@ -62,10 +62,9 @@ class ModelAccountCustomer extends Model {
 		$subject = $this->language->get('registration_subject');
 
         $html = $this->renderTemplate(DIR_MAIL . 'registration.html', [
-            'registration_text' => $this->language->get('registration_text'),
-
-            'activation_code' => $data['activation_code'],
-            'password' => $data['password']
+            'text_hello' => $this->language->get('text_hello'),
+            'text_activation' => sprintf($this->language->get('text_activation'), $data['activation_code']),
+            'text_password' => sprintf($this->language->get('text_activation'), $data['password'])
         ]);
 
 		$mail = new Mail();
