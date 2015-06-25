@@ -71,14 +71,6 @@ class ModelAccountCustomer extends Model {
         $mail->port = $this->config->get('config_smtp_port');
 
 
-        $headers = array("From: from@example.com",
-            "Reply-To: replyto@example.com",
-            "X-Mailer: PHP/" . PHP_VERSION
-        );
-        mail('demoniros@gmail.com', 'mail()', 'dummy message', implode("\n", $headers));
-
-
-
 		$mail->setTo($data['email']);
 		$mail->setFrom($this->config->get('config_email'));
 		$mail->setSender($this->config->get('config_name'));
@@ -86,36 +78,6 @@ class ModelAccountCustomer extends Model {
 		$mail->setText(html_entity_decode($message, ENT_QUOTES, 'UTF-8'));
 		$mail->send();
 
-		/*// Send to main admin email if new account email is enabled
-		if ($this->config->get('config_account_mail')) {
-			$message  = $this->language->get('text_signup') . "\n\n";
-			$message .= $this->language->get('text_website') . ' ' . $this->config->get('config_name') . "\n";
-			$message .= $this->language->get('text_firstname') . ' ' . $data['firstname'] . "\n";
-			$message .= $this->language->get('text_lastname') . ' ' . $data['lastname'] . "\n";
-			$message .= $this->language->get('text_customer_group') . ' ' . $customer_group_info['name'] . "\n";
-
-			if ($data['company']) {
-				$message .= $this->language->get('text_company') . ' '  . $data['company'] . "\n";
-			}
-
-			$message .= $this->language->get('text_email') . ' '  .  $data['email'] . "\n";
-			$message .= $this->language->get('text_telephone') . ' ' . $data['telephone'] . "\n";
-
-			$mail->setTo($this->config->get('config_email'));
-			$mail->setSubject(html_entity_decode($this->language->get('text_new_customer'), ENT_QUOTES, 'UTF-8'));
-			$mail->setText(html_entity_decode($message, ENT_QUOTES, 'UTF-8'));
-			$mail->send();
-
-			// Send to additional alert emails if new account email is enabled
-			$emails = explode(',', $this->config->get('config_alert_emails'));
-
-			foreach ($emails as $email) {
-				if (strlen($email) > 0 && preg_match('/^[^\@]+@.*\.[a-z]{2,6}$/i', $email)) {
-					$mail->setTo($email);
-					$mail->send();
-				}
-			}
-		}*/
 	}
 
     public function generateRefCode($length){
