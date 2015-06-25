@@ -1,6 +1,7 @@
 <?php
 class Session {
-	public $data = array();
+	public $data = [];
+    public $flashMessages = [];
 			
 	public function __construct() {
 		if (!session_id()) {

@@ -12,11 +12,6 @@ class ControllerCommonHome extends Controller {
 
 		$this->data['heading_title'] = $titles[$this->config->get('config_language_id')];
 
-        // Add referal code to session
-        if(isset($this->request->get['p'])){
-            $this->session->data['ref_code'] = $this->request->get['p'];
-        }
-
 		$this->template = 'default/template/common/home.tpl';
 
 		$this->children = array(

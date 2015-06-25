@@ -61,7 +61,6 @@ class ControllerCommonSeoUrl extends Controller
                 }
             }
 
-
            if ($this->request->get['_route_'] == 'contact') {
                 $this->request->get['route'] = 'information/contact';
             } elseif ($this->request->get['_route_'] == 'account') {
@@ -71,7 +70,9 @@ class ControllerCommonSeoUrl extends Controller
             } elseif ($this->request->get['_route_'] == 'logout') {
                 $this->request->get['route'] = 'account/logout';
             } elseif ($this->request->get['_route_'] == 'register') {
-                $this->request->get['route'] = 'account/register/ajax2register';
+               $this->request->get['route'] = 'account/register/ajax2register';
+            } elseif ($this->request->get['_route_'] == 'activate') {
+                $this->request->get['route'] = 'account/register/activate';
             }
 
             if (isset($this->request->get['route']) && !$this->request->isXhr()) {
@@ -100,7 +101,6 @@ class ControllerCommonSeoUrl extends Controller
 
         $data = array();
         parse_str($url_info['query'], $data);
-
         foreach ($data as $key => $value) {
             if (isset($data['route'])) {
                 if (
@@ -132,7 +132,11 @@ class ControllerCommonSeoUrl extends Controller
                     $url .= '/logout';
                 } elseif (isset($data['route']) && $data['route'] == 'account/register/ajax2register') {
                     $url .= '/register';
+                } elseif (isset($data['route']) && $data['route'] == 'account/register/activate') {
+                    $url .= '/activate';
+                    break;
                 }
+
             }
         }
 

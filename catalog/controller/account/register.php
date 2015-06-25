@@ -50,8 +50,26 @@ class ControllerAccountRegister extends Controller {
 
     }
 
-    public function confirm($code){
+    public function activate(){
+        $code = $this->request->get['code'];
 
+        $this->language->load('account/activate');
+        $this->load->model('account/customer');
+
+        if($this->model_account_customer->activateByCode($code)){
+            $this->session->flashMessages[] = [
+                'error' => false,
+                'message' => $this->language->get('message_success')
+            ];
+        } else {
+            $this->session->flashMessages[] = [
+                'error' => true,
+                'message' => $this->language->get('message_error')
+            ];
+        }
+
+        // TODO: redirect to cabinet
+        $this->redirect('/');
     }
 
 	protected function validate() {

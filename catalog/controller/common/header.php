@@ -122,6 +122,11 @@ class ControllerCommonHeader extends Controller {
 			$this->data['search'] = '';
 		}
 
+        // Add referal code to session
+        if(isset($this->request->get['p'])){
+            $this->session->data['ref_code'] = $this->request->get['p'];
+        }
+
 		$this->children = array(
 			'module/language',
 		);

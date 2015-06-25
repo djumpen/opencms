@@ -61,9 +61,11 @@ class ModelAccountCustomer extends Model {
 
 		$subject = $this->language->get('registration_subject');
 
+        $activation_url = $this->url->link('account/register/activate', 'code=' . $data['activation_code']);
+
         $html = $this->renderTemplate(DIR_MAIL . 'registration.html', [
             'text_hello' => $this->language->get('text_hello'),
-            'text_activation' => sprintf($this->language->get('text_activation'), $data['activation_code']),
+            'text_activation' => sprintf($this->language->get('text_activation'), $activation_url, $activation_url),
             'text_password' => sprintf($this->language->get('text_password'), $data['password'])
         ]);
 
@@ -82,7 +84,6 @@ class ModelAccountCustomer extends Model {
 		$mail->setFrom($this->config->get('config_email'));
 		$mail->setSender($this->config->get('config_name'));
 		$mail->setSubject(html_entity_decode($subject, ENT_QUOTES, 'UTF-8'));
-		//$mail->setText(html_entity_decode($html, ENT_QUOTES, 'UTF-8'));
         $mail->setHtml(html_entity_decode($html), ENT_QUOTES, 'UTF-8');
 		$mail->send();
 
@@ -234,6 +235,15 @@ class ModelAccountCustomer extends Model {
 		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "customer_ban_ip` WHERE ip = '" . $this->db->escape($ip) . "'");
 
 		return $query->num_rows;
-	}	
+	}
+
+    public function activateByCode($code){
+        $query = $this->db->query("SELECT * FROM customer WHERE activation_code = '" . $this->db->escape($code) . "'");
+        if($query->num_rows && $query->row['customer_id']){
+            $this->db->query("UPDATE customer SET approved = '1' WHERE customer_id = '" . $query->row['customer_id'] . "'");
+            return true;
+        }
+        return false;
+    }
 }
 ?>
