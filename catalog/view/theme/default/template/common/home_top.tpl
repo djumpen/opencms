@@ -9,13 +9,13 @@
             currentModule;
 
         Ajax2login('#top-register-module form', 'register');
+        Ajax2login('#bot-register-module', 'register');
         Ajax2login('#top-login-module form', 'login');
-        Ajax2login('#top-forgot-module form', 'forgot');
+        Ajax2login('#top-forgot-module', 'forgot');
 
-        loginModule.hide();
+        loginModule.show();
         forgotModule.hide();
-
-        registerModule.show();
+        registerModule.hide();
         currentModule = registerModule;
 
         $('#top-module-container .control-link').on('click', function () {
@@ -44,6 +44,16 @@
     <div class="overlay"></div>
     <div class="alert-content">
         <div class="close">Закрыть</div>
+        <div class="moule" id="top-login-module">
+            <form action="<?=$login_action;?>">
+                <input type="email" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="<?=$text_password;?>">
+                <button type="submit"><?=$button_login;?></button>
+            </form>
+            <span class="register-form-link control-link"><?=$link_register;?></span>
+            <span class="forgot-form-link control-link"><?=$link_forgot;?></span>
+        </div>
+
         <div class="moule" id="top-register-module">
             <form action="<?=$register_action;?>">
                 <div class="row">
@@ -65,16 +75,6 @@
             </form>
             <span class="login-form-link control-link"><?=$link_login;?></span>
             <span class="register-form-link control-link"><?=$link_register;?></span>
-        </div>
-
-        <div class="moule" id="top-login-module">
-            <form action="<?=$login_action;?>">
-                <input type="email" name="email" placeholder="Email">
-                <input type="password" name="password" placeholder="<?=$text_password;?>">
-                <button type="submit"><?=$button_login;?></button>
-            </form>
-            <span class="register-form-link control-link"><?=$link_register;?></span>
-            <span class="forgot-form-link control-link"><?=$link_forgot;?></span>
         </div>
     </div>
 </div>
@@ -101,13 +101,13 @@
             <div class="header-main">
                 <div class="slogan">
                     <span class="element"></span>
-                    <p>FREEPEO - THE PROJECT THAT WILL CHANGE YOUR LIFE</p>
+                    <p>FREEPE - THE PROJECT THAT WILL CHANGE YOUR LIFE</p>
                 </div>
-                <form class="email-form" action="#">
+                <form class="email-form" action="<?=$register_action;?>" id="bot-register-module">
                     <div class="title">Get the advantages of being the first!</div>
                     <fieldset>
-                        <input type="email"  placeholder="Email Address">
-                        <input type="submit" value="Get Started">
+                        <input type="email" name="email" placeholder="Email Address">
+                        <input type="submit" name="submit" value="STEP INSIDE">
                     </fieldset>
                 </form>
             </div>

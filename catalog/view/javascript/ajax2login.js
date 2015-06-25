@@ -16,6 +16,7 @@ var Ajax2login = function(selector, action){
                 if(action == 'register')
                     _this.register();
                 e.preventDefault();
+                return false;
             });
         },
         validate: function(){
@@ -57,7 +58,6 @@ var Ajax2login = function(selector, action){
             }
         },
         register: function(){
-            console.log(this.form);
             if(this.validate()) {
                 var _this = this;
                 $.ajax({
@@ -78,6 +78,7 @@ var Ajax2login = function(selector, action){
             } else {
                 this.error('Неправильно заполнены поля E-Mail и/или пароль!');
             }
+            return false;
         },
         forgot: function(login){
             $.ajax({
