@@ -29,6 +29,7 @@ class ModelAccountCustomer extends Model {
 
         //TODO: generate password
         $data['password'] = $this->generateRefCode(6);
+        $data['activation_code'] = $this->generateRefCode(10);
 
 		$this->load->model('account/customer_group');
 
@@ -45,6 +46,7 @@ class ModelAccountCustomer extends Model {
 		            status = '1',
 		            approved = '" . (int)!$customer_group_info['approval'] . "',
 		            ref_code = '" . $data['ref_code'] . "',
+		            activation_code = '" . $data['activation_code'] . "',
 		            parent_id = '" . $data['parent_id'] . "',
 		            date_added = NOW()");
 
@@ -58,7 +60,13 @@ class ModelAccountCustomer extends Model {
 		$this->language->load('mail/customer');
 
 		$subject = $this->language->get('registration_subject');
-		$message = sprintf(file_get_contents(DIR_MAIL . 'registration' . '.html'), $this->language->get('registration_text'));
+
+        $html = $this->renderTemplate(DIR_MAIL . 'registration.html', [
+            'registration_text' => $this->language->get('registration_text'),
+
+            'activation_code' => $data['activation_code'],
+            'password' => $data['password']
+        ]);
 
 		$mail = new Mail();
 
@@ -75,7 +83,8 @@ class ModelAccountCustomer extends Model {
 		$mail->setFrom($this->config->get('config_email'));
 		$mail->setSender($this->config->get('config_name'));
 		$mail->setSubject(html_entity_decode($subject, ENT_QUOTES, 'UTF-8'));
-		$mail->setText(html_entity_decode($message, ENT_QUOTES, 'UTF-8'));
+		//$mail->setText(html_entity_decode($html, ENT_QUOTES, 'UTF-8'));
+        $mail->setHtml($html, ENT_QUOTES, 'UTF-8');
 		$mail->send();
 
 	}

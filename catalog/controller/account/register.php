@@ -50,6 +50,10 @@ class ControllerAccountRegister extends Controller {
 
     }
 
+    public function confirm($code){
+
+    }
+
 	protected function validate() {
 
         if (!isset($this->request->post['email']) || (utf8_strlen(trim($this->request->post['email'])) > 96) || !preg_match('/^[^\@]+@.*\.[a-z]{2,6}$/i', trim($this->request->post['email']))) {

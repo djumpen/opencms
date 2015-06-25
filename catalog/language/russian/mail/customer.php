@@ -18,8 +18,10 @@ $_['text_telephone']      = 'Телефон:';
 
 
 // Registration
-$_['registration_subject'] = 'Лоло';
+$_['registration_subject'] = 'Спасибо за выявленный интерес';
 $_['registration_text'] = 'Текст регистрационного сообщения';
+//$_['referal_link'] = '<a href="' . HTTP_SERVER . 'register?';
+
 
 // 1 day
 $_['1_day_subject'] = '';
