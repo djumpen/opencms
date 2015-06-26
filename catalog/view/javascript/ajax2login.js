@@ -32,6 +32,7 @@ var Ajax2login = function(selector, action){
             return (errors < 1);
         },
         login: function(login, password){
+
             if(this.validate()) {
                 var _this = this;
                 $.ajax({
@@ -40,7 +41,7 @@ var Ajax2login = function(selector, action){
                     dataType: 'json',
                     type: 'post',
                     success: function(response){
-                        if(!response.error) {
+                        if(!response.errors) {
                             if(window.location.pathname == '/logout'){
                                 window.location.href = '/';
                             } else {
@@ -58,6 +59,7 @@ var Ajax2login = function(selector, action){
             }
         },
         register: function(){
+            console.log(this.form);
             if(this.validate()) {
                 var _this = this;
                 $.ajax({
