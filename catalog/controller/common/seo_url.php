@@ -73,6 +73,8 @@ class ControllerCommonSeoUrl extends Controller
                $this->request->get['route'] = 'account/register/ajax2register';
             } elseif ($this->request->get['_route_'] == 'activate') {
                 $this->request->get['route'] = 'account/register/activate';
+            } elseif ($this->request->get['_route_'] == 'profile') {
+                $this->request->get['route'] = 'account/profile';
             }
 
             if (isset($this->request->get['route']) && !$this->request->isXhr()) {
@@ -134,6 +136,9 @@ class ControllerCommonSeoUrl extends Controller
                     $url .= '/register';
                 } elseif (isset($data['route']) && $data['route'] == 'account/register/activate') {
                     $url .= '/activate';
+                    break;
+                } elseif (isset($data['route']) && $data['route'] == 'account/profile') {
+                    $url .= '/profile';
                     break;
                 }
 
