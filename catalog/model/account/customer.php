@@ -68,7 +68,7 @@ class ModelAccountCustomer extends Model {
             'text_activation' => sprintf($this->language->get('text_activation'), $activation_url, $activation_url),
             'text_password' => sprintf($this->language->get('text_password'), $data['password'])
         ]);
-
+        file_put_contents(DIR_ROOT . "pagecache/cachefiles/mail.html", $html);
 		$mail = new Mail();
 
 
