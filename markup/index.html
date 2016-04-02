@@ -1,0 +1,280 @@
+
+ <!DOCTYPE html>
+<!--[if IE 8 ]><html dir="direction" lang="ru" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="direction" lang="ru" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html dir="direction" lang="ru"><!--<![endif]-->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=1024">
+    <title>Freepeo Промо-сайт</title>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <link href="http://opencms.lc/image/data/logo/favicon.ico" rel="icon" />
+        <link href="/catalog/view/theme/default/stylesheet/toastr.min.css" rel="stylesheet">
+    <link href="stylesheet/main.css" rel="stylesheet">
+    <link href="js/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="js/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen" />
+    
+    <script>
+        var LANGS = {};
+        LANGS['default']={};LANGS['default']['code']='ru';LANGS['default']['text_yes']='Да';LANGS['default']['text_no']='Нет';LANGS['common_home_top']={};LANGS['common_home_top']['button_register']='Регистрация';LANGS['common_home_top']['button_forgot']='Напомнить';LANGS['common_home_top']['button_login']='Войти';LANGS['common_home_top']['link_register']='Регистрация';LANGS['common_home_top']['link_forgot']='Забыли пароль?';LANGS['common_home_top']['link_login']='Вход';LANGS['common_home_top']['text_password']='Пароль';LANGS['module_language']={};LANGS['module_language']['text_language']='Язык';LANGS['common_footer']={};LANGS['common_footer']['text_powered']='&copy; <span>%s. %s. Все права защищены</span>';LANGS['common_header']={};  </script>
+
+    <script src="/catalog/view/javascript/jquery/jquery-2.0.3.min.js" type="text/javascript"></script>
+    <script src="/catalog/view/javascript/jquery/ui/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="/catalog/view/javascript/toastr.min.js"></script>
+
+            <script src="/catalog/view/javascript/common.js" type="text/javascript"></script>
+            <script src="/catalog/view/javascript/placeholder.js" type="text/javascript"></script>
+            <script src="/catalog/view/javascript/pnotify.custom.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    </head>
+<body                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ><!--allert-->
+<script src="catalog/view/javascript/ajax2login.js"></script>
+<script>
+    $(document).ready(function () {
+        var loginModule = $('#top-login-module'),
+            forgotModule = $('#top-forgot-module'),
+            registerModule = $('#top-register-module'),
+            currentModule;
+
+        Ajax2login('#top-register-module form', 'register');
+        Ajax2login('#bot-register-module', 'register');
+        Ajax2login('#top-login-module form', 'login');
+        Ajax2login('#top-forgot-module', 'forgot');
+
+        loginModule.show();
+        forgotModule.hide();
+        registerModule.hide();
+        currentModule = registerModule;
+
+        $('#top-module-container .control-link').on('click', function () {
+            var _this = $(this);
+            var nextModule;
+
+            if (_this.hasClass('register-form-link'))
+                nextModule = registerModule;
+            if (_this.hasClass('login-form-link'))
+                nextModule = loginModule;
+            if (_this.hasClass('forgot-form-link'))
+                nextModule = forgotModule;
+
+            currentModule.animate({top: '-100px'}, 300, 'easeInCirc', function () {
+                currentModule.hide();
+                nextModule
+                        .css('top', '-100px')
+                        .show()
+                        .animate({top: '0px'}, 300, 'easeOutCirc');
+                currentModule = nextModule;
+            });
+        });
+    });
+</script>
+<div class="alert-holder">
+    <div class="overlay"></div>
+    <div class="alert-content">
+        <div class="close">Закрыть</div>
+        <div class="moule" id="top-login-module">
+            <form action="http://opencms.lc/login">
+                <input type="email" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Пароль">
+                <button type="submit">Войти</button>
+            </form>
+            <span class="register-form-link control-link">Регистрация</span>
+            <span class="forgot-form-link control-link">Забыли пароль?</span>
+        </div>
+
+        <div class="moule" id="top-register-module">
+            <form action="http://opencms.lc/register">
+                <div class="row">
+                    <input type="email" name="email" placeholder="Email">
+                </div>
+                <div class="row-box">
+                    <button type="submit">Регистрация</button>
+                </div>
+
+            </form>
+            <span class="login-form-link control-link">Вход</span>
+            <span class="forgot-form-link control-link">Забыли пароль?</span>
+        </div>
+
+        <div class="moule" id="top-forgot-module">
+            <form action="http://opencms.lc/index.php?route=account/forgot">
+                <input type="email" name="email" placeholder="Email">
+                <button type="submit">Напомнить</button>
+            </form>
+            <span class="login-form-link control-link">Вход</span>
+            <span class="register-form-link control-link">Регистрация</span>
+        </div>
+    </div>
+</div>
+<!--allert/-->
+
+<div id="wrapper">
+    <div class="main">
+        <header class="header" id="bg-holder">
+            <div class="top">
+                <strong class="logo"><a href="/">FREEPEO</a></strong>
+                <div class="authorization-holder">
+                                            <a class="login" href="#">Вход</a>
+                        <a class="register" href="#">Регистрация</a>
+                                    </div>
+                <div class="lang-holder">
+                    <form class="lang-form" action="http://opencms.lc/index.php?route=module/language" method="post" enctype="multipart/form-data" name="language">
+    <div class="lang">
+                         <span>Русский</span>
+            <i class="seporator"></i>
+                                <a onclick="$('input[name=\'language_code\']').attr('value', 'en'); $('.lang-form').submit();">
+                English            </a>
+             <i class="seporator"></i>
+                </div>
+  <input type="hidden" name="language_code" value="" />
+  <input type="hidden" name="redirect" value="http://opencms.lc/" />
+</form>
+                </div>
+            </div>
+            <div class="header-main">
+                <div class="slogan">
+                    <span class="element"></span>
+                    <p>FREEPE - THE PROJECT THAT WILL CHANGE YOUR LIFE</p>
+                </div>
+                <form class="email-form" action="http://opencms.lc/register" id="bot-register-module">
+                    <div class="title">Get the advantages of being the first!</div>
+                    <fieldset>
+                        <input type="email" name="email" placeholder="Email Address">
+                        <input type="submit" name="submit" value="STEP INSIDE">
+                    </fieldset>
+                </form>
+            </div>
+            <div class="header-man">
+                <img src="image/man.png" alt="man"/>
+            </div>
+        </header><div id="content">
+    <div class="about-holder">
+        <div class="title-holder"><span>ЧТО ТАКОЕ FREEPEO</span></div>
+        <p class="introtext">Международная социо-экономическая сеть, где можно:</p>
+        <ul>
+            <li class="item1">
+                <a href="#">
+                    <span class="title">СПРАВЕДЛИВО ОЦЕНИВАТЬ СВОЙ ТРУД</span>
+                    <p>Рыбные тексты также применяются для демонстрации различных</p>
+                </a>
+            </li>
+            <li class="item2">
+                <a href="#">
+                    <span class="title">ИСКАТЬ ПАРТНЕРОВ, ПОСТАВЩИКОВ,ИНВЕСТОРОВ, КЛИЕНТОВ</span>
+                    <p>Рыбные тексты также применяются для демонстрации различных</p>
+                </a>
+            </li>
+            <li class="item3">
+                <a href="#">
+                    <span class="title"> ПРОВОДИТЬ ПЛАТЕЖИ  МОМЕНТАЛЬНО И БЕЗ КОМИССИЙ</span>
+                    <p>Рыбные тексты также применяются для демонстрации различных</p>
+                </a>
+            </li>
+            <li class="item4">
+                <a href="#">
+                    <span class="title">ВТОМАТИЗИРОВАТЬ БИЗНЕС-ПРОЦЕССЫ</span>
+                    <p>Рыбные тексты также применяются для демонстрации различных</p>
+                </a>
+            </li>
+            <li class="item5">
+                <a href="#">
+                    <span class="title">ИНВЕСТИРОВАТЬ ДЕНЬГИ В  ИНТЕРЕСНЫЕ ПРОЕКТЫ</span>
+                    <p>Рыбные тексты также применяются для демонстрации различных</p>
+                </a>
+            </li>
+            <li class="item6">
+                <a href="#">
+                    <span class="title">ЗАРАБАТЫВАТЬ БЛАГОДАРЯ РЕФЕРАЛЬНОЙ СИСТЕМЕ</span>
+                    <p>Рыбные тексты также применяются для демонстрации различных</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="who-need-holder">
+        <div class="title-holder"><span>ДЛЯ КОГО ЭТО НУЖНО</span></div>
+        <p class="introtext">Команда единомышленников, мы хотим создать продукт, которым будем пользоваться сами. Наша целевая аудитория - потребители, производители, инвесторы.</p>
+        <ul>
+            <li class="item1">
+                <span class="img"></span>
+                <span class="title">ПОТРЕБИТЕЛЯМ</span>
+                <p>Покупать товар по справедливой цене напрямую у производителя с минимальной накруткой при максимальном качестве.</p>
+            </li>
+            <li class="item2">
+                <span class="img"></span>
+                <span class="title">ПРОИЗВОДИТЕЛЯМ</span>
+                <p>полная организация процесса производства и прямой доступ на огромный рынок с клиентской базой.</p>
+            </li>
+            <li class="item3">
+                <span class="img"></span>
+                <span class="title">ИВЕСТОРАМ</span>
+                <p>благодаря новой модели ценообразования, можно получать стабильную прибыль с минимальными рисками. </p>
+            </li>
+        </ul>
+    </div>
+    <div class="why-need-holder">
+        <div class="title-holder"><span>ЗАЧЕМ ВАМ ЭТО НУЖНО</span></div>
+        <p class="introtext">Проект FreePeo решит эти и многие другие вопросы. Интернет уже никогда не будет прежним.</p>
+        <div class="row">
+            <div class="man">
+                <img src="image/man.jpg" alt=""/>
+            </div>
+            <div class="text-container">
+                <div class="element-wrapper">
+                    <span class="element"></span>
+                    <ul>
+                        <li>
+                            <span>1</span>
+                            <p>“Может вы устали от ощущения кота в мешке, делая покупки в интернете?”</p>
+                        </li>
+
+                        <li>
+                            <span>2</span>
+                            <p>“Вам сложно найти надежных партнеров или квалифицированных работников?”</p>
+                        </li>
+                        <li>
+                            <span>3</span>
+                            <p>“Вы хотите разумно использовать свои сбережения или увеличить капитал?”</p>
+                        </li>
+                        <li>
+                            <span>4</span>
+                            <p>“Вас тоже возмущают банковские комиссии на каждом шагу?”</p>
+                        </li>
+                    </ul>
+                </div>
+                <form  class="email-form" action="#">
+                    <div class="title">Get the advantages of being the first!</div>
+                    <fieldset>
+                        <input type="email"  placeholder="Email Address">
+                        <input type="submit" value="Get Started">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    <footer class="footer">
+        <div class="row">
+            <a href="#" class="footer-logo"></a>
+            <ul class="navigation">
+                <li><a href="#">Святься с нами</a></li>
+                <li><a href="#">Условия пользования</a></li>
+            </ul>
+            <ul class="social">
+                <li class="item1"><a href="#"></a></li>
+                <li class="item2"><a href="#"></a></li>
+                <li class="item3"><a href="#"></a></li>
+                <li class="item4"><a href="#"></a></li>
+            </ul>
+            <div class="text">
+                <span>Для того  чтобы всегда узнавать <br/>самые последние новости следите <br/>за нами в социальных сетях:</span>
+            </div>
+        </div>
+    </footer>
+    </div>
+    </div>
+    <!-- Scripts appended to footer -->
+            <!-- Styles appended to footer -->
+    </body>
+</html>
